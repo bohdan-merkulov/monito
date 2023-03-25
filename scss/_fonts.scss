@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'GilroyBold';
+    src: url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+         url('../fonts/Gilroy-Bold.woff') format('woff'), 
+         url('../fonts/Gilroy-Bold.ttf')  format('truetype'),
+  }
+
+@font-face {
+    font-family: 'GilroyMedium';
+    src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+         url('../fonts/Gilroy-Medium.woff') format('woff'), 
+         url('../fonts/Gilroy-Medium.ttf')  format('truetype'),
+  }
+
+@font-face {
+    font-family: 'GilroyXBold';
+    src: url('../fonts/Gilroy-Extrabold.woff2') format('woff2'),
+         url('../fonts/Gilroy-Extrabold.woff') format('woff'), 
+         url('../fonts/Gilroy-Extrabold.ttf')  format('truetype'),
+  }
+
+@font-face {
+    font-family: 'GilroySemibold';
+    src: url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
+         url('../fonts/Gilroy-Semibold.woff') format('woff'), 
+         url('../fonts/Gilroy-Semibold.ttf')  format('truetype'),
+  }
+
+@font-face {
+    font-family: 'GilroyRegular';
+    src: url('../fonts/Gilroy-Regular.ttf') format('woff2'),
+         url('../fonts/Gilroy-Regular.woff') format('woff'), 
+         url('../fonts/Gilroy-Regular.ttf')  format('truetype'),
+  }
+
+$gilroy-regular: GilroyRegular;
+$gilroy-semibold: GilroySemibold;
+$gilroy-Xbold: GilroyXBold;
+$gilroy-bold: GilroyBold;
+$gilroy-medium: GilroyMedium;

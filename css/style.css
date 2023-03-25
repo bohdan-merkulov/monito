@@ -1,0 +1,891 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "GilroyBold";
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GilroyMedium";
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GilroyXBold";
+  src: url("../fonts/Gilroy-Extrabold.woff2") format("woff2"), url("../fonts/Gilroy-Extrabold.woff") format("woff"), url("../fonts/Gilroy-Extrabold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GilroySemibold";
+  src: url("../fonts/Gilroy-Semibold.woff2") format("woff2"), url("../fonts/Gilroy-Semibold.woff") format("woff"), url("../fonts/Gilroy-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GilroyRegular";
+  src: url("../fonts/Gilroy-Regular.ttf") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("truetype");
+}
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 82%;
+    margin: 0 auto;
+    padding-top: 2vw;
+  }
+  .wrapper header {
+    font-family: GilroyBold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper header a img {
+    width: 15vw;
+    height: auto;
+    margin: 0 auto;
+  }
+  .wrapper header .menu {
+    display: none;
+  }
+  .wrapper header .actions {
+    display: none;
+  }
+  .wrapper .main-banner {
+    margin-top: 2vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .wrapper .main-banner .inner-banner {
+    margin-top: 5.5vw;
+  }
+  .wrapper .main-banner .inner-banner h1 {
+    font-family: GilroyXBold;
+    font-size: 4.1vw;
+    line-height: 4.7vw;
+    color: #002A48;
+  }
+  .wrapper .main-banner .inner-banner h2 {
+    font-family: GilroyBold;
+    font-size: 3.1vw;
+    line-height: 4.1vw;
+    color: #002A48;
+  }
+  .wrapper .main-banner .inner-banner p {
+    font-family: GilroyMedium;
+    font-size: 1vw;
+    color: #242B33;
+    line-height: 1.6vw;
+    margin-top: 1.3vw;
+    padding-right: 16vw;
+  }
+  .wrapper .main-banner .banner-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 2.7vw;
+    font-family: GilroyMedium;
+    font-size: 1vw;
+    line-height: 1.6vw;
+  }
+  .wrapper .main-banner .banner-buttons .blue-btn:last-child {
+    width: 9vw;
+    font-size: 1.1vw;
+    text-align: center;
+    padding: 0vw 1.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .wrapper .main-banner img {
+    position: relative;
+    right: 2vw;
+    min-width: 33vw;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+
+.header-banner {
+  background: url("../img/elements-banner.png"), linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%);
+  background-size: cover;
+}
+
+.wrapper {
+  max-width: 82%;
+  margin: 0 auto;
+  padding-top: 2vw;
+}
+.wrapper header {
+  font-family: GilroyBold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper header a img {
+  width: 8vw;
+  height: auto;
+  margin-right: 3.5vw;
+}
+.wrapper header .menu li {
+  display: inline-block;
+  margin-right: 3.5vw;
+}
+.wrapper header .menu li:last-child {
+  margin-right: 2.5vw;
+}
+.wrapper header .menu li a {
+  display: block;
+  color: #003459;
+  font-size: 1vw;
+  line-height: 24px;
+}
+.wrapper .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .actions .search {
+  position: relative;
+  background: #fff;
+  width: 18vw;
+  height: 3vw;
+  border-radius: 3vw;
+  overflow: hidden;
+  margin-right: 1vw;
+}
+.wrapper .actions .search .icon {
+  position: absolute;
+  top: 0;
+  left: 1.2vw;
+  background: #fff;
+  width: 0vw;
+  height: 3vw;
+  border-radius: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+}
+.wrapper .actions .search .icon:before {
+  content: "";
+  position: absolute;
+  width: 0.8vw;
+  height: 0.8vw;
+  border: 2px solid #667479;
+  border-radius: 50%;
+}
+.wrapper .actions .search .icon:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0.4vw;
+  background: #667479;
+  -webkit-transform: translate(0.9vw, 0.5vw) rotate(315deg);
+          transform: translate(0.9vw, 0.5vw) rotate(315deg);
+  border-radius: 30%;
+}
+.wrapper .actions .search .input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.4vw;
+  left: 3.3vw;
+}
+.wrapper .actions .search .input input {
+  position: absolute;
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 1vw;
+}
+.wrapper .actions .search .input input::-webkit-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+.wrapper .actions .search .input input::-moz-placeholder {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+.wrapper .actions .search .input input:-ms-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+.wrapper .actions .search .input input::-ms-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+.wrapper .actions .search .input input::placeholder {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+.wrapper .actions .currency-change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1vw;
+  font-family: GilroyMedium;
+}
+.wrapper .actions .currency-change li a {
+  color: #002A48;
+}
+.wrapper .actions .currency-change li:first-child {
+  margin-right: 0.5vw;
+}
+.wrapper .actions .currency-change li:last-child {
+  margin-left: 0.9vw;
+}
+.wrapper .actions .currency-change li:last-child img {
+  width: 0.6vw;
+}
+.wrapper .main-banner {
+  margin-top: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrapper .main-banner .inner-banner {
+  margin-top: 5.5vw;
+}
+.wrapper .main-banner .inner-banner h1 {
+  font-family: GilroyXBold;
+  font-size: 4.1vw;
+  line-height: 4.7vw;
+  color: #002A48;
+}
+.wrapper .main-banner .inner-banner h2 {
+  font-family: GilroyBold;
+  font-size: 3.1vw;
+  line-height: 4.1vw;
+  color: #002A48;
+}
+.wrapper .main-banner .inner-banner p {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+  color: #242B33;
+  line-height: 1.6vw;
+  margin-top: 1.3vw;
+  padding-right: 16vw;
+}
+.wrapper .main-banner .banner-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2.7vw;
+  font-family: GilroyMedium;
+  font-size: 1vw;
+  line-height: 1.6vw;
+}
+.wrapper .main-banner .banner-buttons .blue-btn:last-child {
+  width: 9vw;
+  font-size: 1.1vw;
+  text-align: center;
+  padding: 0vw 1.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.wrapper .main-banner img {
+  position: relative;
+  right: 2vw;
+  min-width: 33vw;
+}
+
+.blue-btn {
+  background-color: #003459;
+  margin-right: 2vw;
+  color: #fff;
+  text-decoration: none;
+  padding: 1vw 2vw;
+  border-radius: 4vw;
+  font-size: 1vw;
+}
+
+.btn-transparent {
+  font-family: GilroyMedium;
+  background-image: url(../img/play-circle.png);
+  background-size: 12% 44%;
+  width: 9vw;
+  border: 2px solid #003459;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #003459;
+  background-position: 7.8vw 0.9vw;
+  font-size: 1.1vw;
+  padding: 0vw 0.5vw 0vw 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3vw;
+}
+
+.main-page-wrapper {
+  width: 100%;
+  height: auto;
+  background-color: #fdfdfd;
+}
+.main-page-wrapper .main-page-blocks {
+  max-width: 82%;
+  margin: 0 auto;
+  padding-top: 4vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block {
+  margin-bottom: 4vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .pets-block-head {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .pets-block-head .pets-block-title p span {
+  display: inline-block;
+  color: #003459;
+  text-transform: capitalize;
+  font-family: GilroyBold;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  margin-left: 0.3vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .pets-block-head .btn-transparent {
+  width: 13vw;
+  background-position: 12vw 0.9vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .logo-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .logo-area .slide {
+  width: 7vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block:nth-child(4) .logo-area .slide img {
+  width: 100%;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-head .pets-block-title p {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+  line-height: 1.6vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-head .pets-block-title h1 {
+  color: #003459;
+  text-transform: capitalize;
+  font-family: GilroyBold;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-head .btn-transparent {
+  margin: 0;
+  background-image: url(../img/Chevron_Right_MD.png);
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards {
+  margin-top: 1.5vw;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5vw;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 4fr));
+  justify-items: center;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card {
+  -webkit-box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  width: 19vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content {
+  padding: 0.5vw 0.5vw 1.3vw 0.5vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content h2 {
+  margin-top: 0.5vw;
+  font-family: GilroyBold;
+  font-size: 1vw;
+  line-height: 1.6vw;
+  color: #00171F;
+  margin-bottom: 0.3vw;
+  margin-left: 0.5vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content ul {
+  max-width: 18vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #667479;
+  word-spacing: 0.3vw;
+  margin-bottom: 0.5vw;
+  margin-left: 0.5vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content ul li {
+  font-family: GilroyMedium;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content ul li:first-child {
+  margin-right: 1vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content ul li:last-child {
+  list-style: inside;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content ul li span {
+  font-family: GilroyBold;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content img {
+  width: 18vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content h6 {
+  color: #00171F;
+  margin-left: 0.5vw;
+  font-family: GilroyBold;
+  font-size: 1vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content .gift-block {
+  margin-top: 1vw;
+  background-color: #FCEED5;
+  border-radius: 0.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.3vw;
+  padding-bottom: 0.3vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content .gift-block img {
+  width: 1.2vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content .gift-block ul {
+  margin: 0;
+}
+.main-page-wrapper .main-page-blocks .pets-block .pets-block-cards .pets-block-card .pets-block-card-content .gift-block ul li {
+  color: #002A48;
+  font-family: GilroyBold;
+  font-size: 0.9vw;
+  line-height: 1.6vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner {
+  margin-bottom: 4vw;
+  width: 100%;
+  border-radius: 1.3vw;
+  background: url("../img/elements-banner-2.png"), #003459;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner img {
+  min-width: 20vw;
+  position: relative;
+  left: 10vw;
+  margin-top: 3vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text {
+  padding-top: 3.8vw;
+  text-align: right;
+  padding-right: 4.5vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text h1 {
+  font-family: GilroyXBold;
+  font-size: 3.5vw;
+  line-height: 4.7vw;
+  color: #003459;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text h2 {
+  font-family: GilroyBold;
+  font-size: 2.5vw;
+  line-height: 4.1vw;
+  color: #003459;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text p {
+  font-family: GilroyMedium;
+  font-size: 1vw;
+  color: #242B33;
+  line-height: 1.6vw;
+  padding-left: 26vw;
+  text-align: right;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text .banner-buttons {
+  margin-top: 1.5vw;
+  margin-bottom: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: GilroyMedium;
+  font-size: 1vw;
+  line-height: 1.6vw;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text .banner-buttons .banner-btn-transparent {
+  font-family: GilroyMedium;
+  background-image: url(../img/play-circle.png);
+  background-size: 12% 44%;
+  width: 9vw;
+  border: 2px solid #003459;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #003459;
+  background-position: 7.8vw 0.9vw;
+  font-size: 1.1vw;
+  padding: 0vw 0.5vw 0vw 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3vw;
+  border-radius: 4vw;
+  margin-right: 1.5vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner .banner-text .banner-buttons .blue-btn {
+  font-family: GilroyMedium;
+  margin-right: 0;
+  width: 9vw;
+  font-size: 1.1vw;
+  text-align: center;
+  padding: 0vw 1.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited {
+  background: url("../img/elements-banner-3.png"), #FFB775;
+  background-size: cover;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited img {
+  position: initial;
+  min-width: 40vw;
+  margin-top: 0;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited .banner-text {
+  text-align: left;
+  padding-left: 5.5vw;
+  padding-top: 3vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited .banner-text h1 {
+  background: url(../img/font-paw.png);
+  background-repeat: no-repeat;
+  background-position: 16.5vw 1.1vw;
+  background-size: 9%;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited .banner-text p {
+  padding-left: 0;
+  width: 17vw;
+  text-align: left;
+  margin-bottom: 3vw;
+  margin-top: 1vw;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited .banner-text .banner-buttons {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.main-page-wrapper .main-page-blocks .main-page-banner.edited .banner-text .banner-buttons .blue-btn {
+  margin-right: 2vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block.flexed .pets-block-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main-page-wrapper .main-page-blocks .pets-block.flexed .pets-block-cards .pets-block-card {
+  width: inherit;
+}
+.main-page-wrapper .main-page-blocks .pets-block.flexed .pets-block-cards .pets-block-card .pets-block-card-content img {
+  border-radius: 0.5vw;
+  width: 25vw;
+  display: block;
+  margin: 0 auto;
+}
+.main-page-wrapper .main-page-blocks .pets-block.flexed .pets-block-cards .pets-block-card .pets-block-card-content span {
+  margin-top: 1vw;
+  display: inline-block;
+  margin-left: 0.5vw;
+  font-family: GilroyBold;
+  color: #FDFDFD;
+  background: #00A7E7;
+  padding: 0.4vw 0.8vw;
+  border-radius: 2vw;
+  font-size: 0.7vw;
+}
+.main-page-wrapper .main-page-blocks .pets-block.flexed .pets-block-cards .pets-block-card .pets-block-card-content p {
+  font-family: GilroyRegular;
+  margin-left: 0.5vw;
+  margin-top: 0.5vw;
+  font-size: 0.9vw;
+  line-height: 1.3vw;
+}
+
+footer {
+  background: linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%);
+  border-radius: 3vw 3vw 0 0;
+}
+footer .footer-content {
+  max-width: 82%;
+  margin: 0 auto;
+  padding-top: 5.5vw;
+}
+footer .footer-content .register-block {
+  background-color: #003459;
+  border-radius: 1vw;
+}
+footer .footer-content .register-block .register-block-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .footer-content .register-block .register-block-text h1 {
+  font-family: GilroyBold;
+  font-size: 1.5vw;
+  color: #FDFDFD;
+  line-height: 2.2vw;
+  width: 33%;
+  margin-right: 2vw;
+}
+footer .footer-content .register-block .register-block-text .register-form {
+  background: #fff;
+  border-radius: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .footer-content .register-block .register-block-text .register-form input {
+  width: 73%;
+  height: 60%;
+  outline: none;
+  border: 1px solid #99A2A5;
+  border-radius: 0.5vw;
+  margin-left: 1.3vw;
+}
+footer .footer-content .register-block .register-block-text .register-form input::-webkit-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 0.9vw;
+  color: #99A2A5;
+  padding-left: 1.5vw;
+}
+footer .footer-content .register-block .register-block-text .register-form input::-moz-placeholder {
+  font-family: GilroyMedium;
+  font-size: 0.9vw;
+  color: #99A2A5;
+  padding-left: 1.5vw;
+}
+footer .footer-content .register-block .register-block-text .register-form input:-ms-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 0.9vw;
+  color: #99A2A5;
+  padding-left: 1.5vw;
+}
+footer .footer-content .register-block .register-block-text .register-form input::-ms-input-placeholder {
+  font-family: GilroyMedium;
+  font-size: 0.9vw;
+  color: #99A2A5;
+  padding-left: 1.5vw;
+}
+footer .footer-content .register-block .register-block-text .register-form input::placeholder {
+  font-family: GilroyMedium;
+  font-size: 0.9vw;
+  color: #99A2A5;
+  padding-left: 1.5vw;
+}
+footer .footer-content .register-block .register-block-text .register-form .blue-btn {
+  margin-right: 1vw;
+  border-radius: 0.5vw;
+  font-family: GilroyMedium;
+}
+footer .footer-content .footer-elements {
+  margin-top: 2.5vw;
+  font-family: GilroyMedium;
+  font-size: 1.2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #CCD1D2;
+  padding-bottom: 2.5vw;
+}
+footer .footer-content .footer-elements .footer-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer-content .footer-elements .footer-menu ul li:not(:last-child) {
+  margin-right: 4.5vw;
+}
+footer .footer-content .footer-elements .footer-socials ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer-content .footer-elements .footer-socials ul li:not(:last-child) {
+  margin-right: 3vw;
+}
+footer .footer-content .footer-elements .footer-socials ul li img {
+  width: 1.5vw;
+}
+footer .footer-content .footer-bottom {
+  margin-top: 3vw;
+  padding-bottom: 3vw;
+  color: #667479;
+  font-family: GilroyMedium;
+  font-size: 1vw;
+}
+footer .footer-content .footer-bottom ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer-content .footer-bottom ul li img {
+  width: 7vw;
+}
+footer .footer-content .footer-bottom ul ul li:first-child {
+  margin-right: 2vw;
+}
